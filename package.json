@@ -1,5 +1,5 @@
 {
-  "name": "@icedesign/scaffold-cms",
+  "name": "be-react",
   "version": "1.0.0",
   "description": "该模板内置了丰富的区块，主要适用于类 CMS 管理系统，使用时需要根据需求进行删除和添加",
   "homepage": "https://alibaba.github.io/ice/scaffold-preview/ice-design-cms.html",
@@ -56,5 +56,5 @@
     "title": "ICE Design CMS",
     "snapshot": "https://img.alicdn.com/tfs/TB1NKRzdY9YBuNjy0FgXXcxcXXa-1920-1080.png"
   },
-  "title": "校友管理系统"
+  "title": "Be React"
 }
