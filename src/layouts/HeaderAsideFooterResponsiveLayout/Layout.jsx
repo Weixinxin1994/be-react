@@ -14,6 +14,9 @@ import { asideNavs } from './../../navs';
 import './scss/light.scss';
 import './scss/dark.scss';
 
+import { axios } from '../../configuration'
+import { hashHistory } from 'react-router';
+
 // 设置默认的皮肤配置，支持 dark 和 light 两套皮肤配置
 const theme = typeof THEME === 'undefined' ? 'dark' : THEME;
 
@@ -33,6 +36,20 @@ export default class HeaderAsideFooterResponsiveLayout extends Component {
       openKeys,
     };
     this.openKeysCache = openKeys;
+  }
+
+  async componentWillMount() {
+    // 检测当前是否用户登陆，如果没有，跳转到登陆页面
+    try {
+      // 已经登陆
+      const res = await axios.get(`/api/user/me`)
+      console.log(res.data)
+    } catch (error) {
+      // 没有登陆
+      hashHistory.push('/login')
+      console.log(error)
+    }
+
   }
 
   componentDidMount() {

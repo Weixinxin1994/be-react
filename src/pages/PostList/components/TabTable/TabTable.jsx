@@ -84,6 +84,14 @@ export default class TabTable extends Component {
         key: 'action',
         width: 150,
         render: (value, index, record) => {
+          let user = sessionStorage.getItem('user')
+          if (!user) {
+            return <span>无可用操作</span>
+          }
+          user = JSON.parse(user)
+          if (user.role !== 'administrator') {
+            return <span>无可用操作</span>
+          }
           return (
             <span>
               <EditDialog

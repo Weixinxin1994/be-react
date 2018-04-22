@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-export const host = 'http://localhost:8000'
+const env = process.env.NODE_ENV
+
+const host = env === 'production' ? '' : 'http://localhost:8000'
 
 const service = axios.create({
     baseURL: host, // host

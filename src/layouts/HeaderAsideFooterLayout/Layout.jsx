@@ -14,6 +14,9 @@ import { asideNavs } from './../../navs';
 import './scss/light.scss';
 import './scss/dark.scss';
 
+import { axios } from '../../configuration'
+import { hashHistory } from 'react-router';
+
 // 设置默认的皮肤配置，支持 dark 和 light 两套皮肤配置
 const theme = typeof THEME === 'undefined' ? 'dark' : THEME;
 export default class HeaderAsideFooterResponsiveLayout extends Component {
@@ -28,6 +31,8 @@ export default class HeaderAsideFooterResponsiveLayout extends Component {
       isScreen: undefined,
     };
   }
+
+
 
   componentDidMount() {
     this.enquireScreenRegister();
