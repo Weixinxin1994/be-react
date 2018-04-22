@@ -12,7 +12,7 @@ const dataSource = [
     attr: 'home',
   },
   {
-    text: '文章列表',
+    text: '校友列表',
     path: '/post/list',
     attr: 'post',
   },

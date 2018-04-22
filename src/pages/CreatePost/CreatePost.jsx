@@ -16,8 +16,8 @@ export default class CreatePost extends Component {
 
   render() {
     const breadcrumb = [
-      { text: '文章管理', link: '' },
-      { text: '添加文章', link: '#/post/create' },
+      { text: '校友管理', link: '' },
+      { text: '添加校友', link: '#/post/create' },
     ];
     return (
       <div className="create-post-page">

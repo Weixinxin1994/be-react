@@ -19,7 +19,7 @@ export default class Footer extends PureComponent {
           <div style={{ filter: 'grayscale(100%)', opacity: 0.3 }}>
             <Logo />
           </div>
-          <div className="copyright">
+          {/* <div className="copyright">
             © 2018 Theme designed by{' '}
             <a
               href="https://github.com/alibaba/ice"
@@ -29,7 +29,7 @@ export default class Footer extends PureComponent {
             >
               ICE
             </a>
-          </div>
+          </div> */}
         </div>
       </Layout.Footer>
     );

@@ -49,7 +49,7 @@ export default class TabTable extends Component {
         width: 120,
       },
       {
-        title: '文章数',
+        title: '校友数',
         dataIndex: 'articleNum',
         key: 'articleNum',
         width: 80,

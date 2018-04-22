@@ -9,8 +9,7 @@ import {
 } from '@icedesign/form-binder';
 import IceIcon from '@icedesign/icon';
 import './UserLogin.scss';
-import axios from 'axios'
-import { host } from '../../../../configuration'
+import { axios } from '../../../../configuration'
 
 const { Row, Col } = Grid;
 
@@ -43,6 +42,7 @@ export default class UserLogin extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     this.refs.form.validateAll(async (errors, values) => {
       if (errors) {
         console.log('errors', errors);
@@ -52,8 +52,10 @@ export default class UserLogin extends Component {
       try {
         const fd = new FormData();
         Object.entries(values).forEach(e => fd.append(e[0], e[1]));
-        const user = await axios.post(`${host}/api/user/login`, fd)
-        console.log(user)
+        const res = await axios.post(`/api/user/login`, fd)
+        const user = res.data
+        console.log('data:', user)
+        sessionStorage.setItem('user', JSON.stringify(user))
         console.log(this.props);
         hashHistory.push('/');
       } catch (error) {
@@ -74,7 +76,7 @@ export default class UserLogin extends Component {
         />
         <div style={styles.contentWrapper} className="content-wrapper">
           <h2 style={styles.slogan} className="slogan">
-            欢迎使用 <br /> ICE 内容管理系统
+            欢迎使用 <br /> 校友管理系统
           </h2>
           <div style={styles.formContainer}>
             <h4 style={styles.formTitle}>登录</h4>

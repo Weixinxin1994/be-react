@@ -8,8 +8,31 @@ import cx from 'classnames';
 import { Link } from 'react-router';
 import { headerNavs } from '../navs';
 import Logo from './Logo';
+import { hashHistory } from 'react-router';
+
+import { axios } from '../configuration'
+
 
 export default class Header extends PureComponent {
+
+  componentWillMount() {
+    let user = sessionStorage.getItem('user')
+    if (user) {
+      user = JSON.parse(user)
+      this.setState({ user })
+    } else {
+      this.setState({ user: {} })
+    }
+  }
+
+  async logout(e) {
+    e.preventDefault();
+    console.log('登出！')
+    await axios.post('/api/user/logout')
+    hashHistory.push('/login')
+  }
+
+
   render() {
     const { width, theme, isMobile, className, style, ...others } = this.props;
 
@@ -73,15 +96,15 @@ export default class Header extends PureComponent {
                 />
                 <div className="user-profile">
                   <span className="user-name" style={{ fontSize: '13px' }}>
-                    淘小宝
+                    {this.state.user.name || '匿名用户'}
                   </span>
                   <br />
-                  <span
+                  {/* <span
                     className="user-department"
                     style={{ fontSize: '12px' }}
                   >
                     技术部
-                  </span>
+                  </span> */}
                 </div>
                 <Icon
                   type="arrow-down-filling"
@@ -99,13 +122,13 @@ export default class Header extends PureComponent {
                   <FoundationSymbol type="person" size="small" />我的主页
                 </Link>
               </li>
-              <li className="user-profile-menu-item">
+              {/* <li className="user-profile-menu-item">
                 <Link to="/">
                   <FoundationSymbol type="repair" size="small" />设置
                 </Link>
-              </li>
+              </li> */}
               <li className="user-profile-menu-item">
-                <Link to="/login">
+                <Link to="/login" onClick={e => this.logout(e)} >
                   <FoundationSymbol type="compass" size="small" />退出
                 </Link>
               </li>

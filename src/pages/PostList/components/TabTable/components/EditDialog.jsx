@@ -77,37 +77,70 @@ export default class EditDialog extends Component {
           title="编辑"
         >
           <Form direction="ver" field={this.field}>
-            <FormItem label="标题：" {...formItemLayout}>
+            <FormItem label="名字：" {...formItemLayout}>
               <Input
-                {...init('title', {
+                {...init('name', {
                   rules: [{ required: true, message: '必填选项' }],
                 })}
               />
             </FormItem>
 
-            <FormItem label="作者：" {...formItemLayout}>
+            <FormItem label="手机：" {...formItemLayout}>
               <Input
-                {...init('author', {
+                {...init('phone', {
                   rules: [{ required: true, message: '必填选项' }],
                 })}
               />
             </FormItem>
 
-            <FormItem label="状态：" {...formItemLayout}>
+            <FormItem label="QQ：" {...formItemLayout}>
               <Input
-                {...init('status', {
+                {...init('qq', {
                   rules: [{ required: true, message: '必填选项' }],
                 })}
               />
             </FormItem>
 
-            <FormItem label="发布时间：" {...formItemLayout}>
+            <FormItem label="微信：" {...formItemLayout}>
               <Input
-                {...init('date', {
+                {...init('wechat', {
                   rules: [{ required: true, message: '必填选项' }],
                 })}
               />
             </FormItem>
+
+            <FormItem label="学院：" {...formItemLayout}>
+              <Input
+                {...init('college', {
+                  rules: [{ required: true, message: '必填选项' }],
+                })}
+              />
+            </FormItem>
+
+            <FormItem label="班级：" {...formItemLayout}>
+              <Input
+                {...init('theClass', {
+                  rules: [{ required: true, message: '必填选项' }],
+                })}
+              />
+            </FormItem>
+
+            <FormItem label="地址：" {...formItemLayout}>
+              <Input
+                {...init('address', {
+                  rules: [{ required: true, message: '必填选项' }],
+                })}
+              />
+            </FormItem>
+
+            <FormItem label="毕业年份：" {...formItemLayout}>
+              <Input
+                {...init('graduationYear', {
+                  rules: [{ required: true, message: '必填选项' }],
+                })}
+              />
+            </FormItem>
+
           </Form>
         </Dialog>
       </div>

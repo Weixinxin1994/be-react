@@ -7,7 +7,10 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 
+import { axios } from '../../../../configuration'
 import RichEditor from './RichEditor';
+import { hashHistory } from 'react-router';
+
 
 const { Row, Col } = Grid;
 const FormItem = Form.Item;
@@ -22,31 +25,31 @@ export default class ContentEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: {
-        title: '',
-        desc: '',
-        author: '',
-        body: null,
-        cats: [],
-      },
+      value: {},
     };
   }
 
   formChange = (value) => {
-    console.log('value', value);
+    // console.log('value', value);
     this.setState({
       value,
     });
   };
 
   handleSubmit = () => {
-    this.postForm.validateAll((errors, values) => {
+    this.postForm.validateAll(async (errors, values) => {
       console.log('errors', errors, 'values', values);
       if (errors) {
         return false;
       }
-
       // ajax values
+      // 添加校友
+      try {
+        await axios.post('/api/schoolmate/add', values)
+        hashHistory.push('/post/list')
+      } catch (error) {
+        console.log(error)
+      }
     });
   };
 
@@ -61,32 +64,92 @@ export default class ContentEditor extends Component {
           onChange={this.formChange}
         >
           <IceContainer>
-            <h2 style={styles.title}>添加文章</h2>
+            <h2 style={styles.title}>添加校友</h2>
             <Form labelAlign="top" style={styles.form}>
               <Row>
                 <Col span="11">
-                  <FormItem label="标题" required>
-                    <IceFormBinder name="title" required message="标题必填">
-                      <Input placeholder="这里填写文章标题" />
+                  <FormItem label="名字" required>
+                    <IceFormBinder name="name" required message="名字必填">
+                      <Input placeholder="这里填写校友名字" />
                     </IceFormBinder>
-                    <IceFormError name="title" />
+                    <IceFormError name="name" />
                   </FormItem>
                 </Col>
               </Row>
               <Row>
                 <Col span="11">
-                  <FormItem label="作者" required>
-                    <IceFormBinder
-                      name="author"
-                      required
-                      message="作者信息必填"
-                    >
-                      <Input placeholder="填写作者名称" />
+                  <FormItem label="手机" required>
+                    <IceFormBinder name="phone" required message="手机必填">
+                      <Input placeholder="这里填写校友手机" />
                     </IceFormBinder>
-                    <IceFormError name="author" />
+                    <IceFormError name="phone" />
                   </FormItem>
                 </Col>
-                <Col span="11" offset="2">
+              </Row>
+              <Row>
+                <Col span="11">
+                  <FormItem label="QQ" required>
+                    <IceFormBinder name="qq" required message="QQ必填">
+                      <Input placeholder="这里填写校友QQ" />
+                    </IceFormBinder>
+                    <IceFormError name="qq" />
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row>
+                <Col span="11">
+                  <FormItem label="微信" required>
+                    <IceFormBinder name="wechat" required message="微信必填">
+                      <Input placeholder="这里填写校友微信" />
+                    </IceFormBinder>
+                    <IceFormError name="wechat" />
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row>
+                <Col span="11">
+                  <FormItem label="学院" required>
+                    <IceFormBinder name="college" required message="学院必填">
+                      <Input placeholder="这里填写校友学院" />
+                    </IceFormBinder>
+                    <IceFormError name="college" />
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row>
+                <Col span="11">
+                  <FormItem label="班级" required>
+                    <IceFormBinder name="theClass" required message="班级必填">
+                      <Input placeholder="这里填写校友班级" />
+                    </IceFormBinder>
+                    <IceFormError name="theClass" />
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row>
+                <Col span="11">
+                  <FormItem label="地址" required>
+                    <IceFormBinder name="address" required message="地址必填">
+                      <Input placeholder="这里填写校友地址" />
+                    </IceFormBinder>
+                    <IceFormError name="address" />
+                  </FormItem>
+                </Col>
+              </Row>
+              <Row>
+                <Col span="11">
+                  <FormItem label="毕业年份" required>
+                    <IceFormBinder
+                      name="graduationYear"
+                      required
+                      message="毕业年份必填"
+                    >
+                      <Input placeholder="填写校友毕业年份" />
+                    </IceFormBinder>
+                    <IceFormError name="graduationYear" />
+                  </FormItem>
+                </Col>
+                {/* <Col span="11" offset="2">
                   <FormItem label="分类" required>
                     <IceFormBinder
                       name="cats"
@@ -123,9 +186,9 @@ export default class ContentEditor extends Component {
                       }}
                     />
                   </FormItem>
-                </Col>
+                </Col> */}
               </Row>
-              <FormItem label="描述">
+              {/* <FormItem label="描述">
                 <IceFormBinder name="desc">
                   <Input multiple placeholder="这里填写正文描述" />
                 </IceFormBinder>
@@ -134,10 +197,10 @@ export default class ContentEditor extends Component {
                 <IceFormBinder name="body">
                   <RichEditor />
                 </IceFormBinder>
-              </FormItem>
+              </FormItem> */}
               <FormItem label=" ">
                 <Button type="primary" onClick={this.handleSubmit}>
-                  发布文章
+                  添加校友
                 </Button>
               </FormItem>
             </Form>

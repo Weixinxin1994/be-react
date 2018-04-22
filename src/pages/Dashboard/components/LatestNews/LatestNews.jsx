@@ -8,27 +8,27 @@ const { Row, Col } = Grid;
 const dataSource = {
   articles: [
     {
-      title: '这里是文章的标题1',
+      title: '这里是校友的标题1',
       time: '2018-03-31',
     },
     {
-      title: '这里是文章的标题2',
+      title: '这里是校友的标题2',
       time: '2018-02-02',
     },
     {
-      title: '这里是文章的标题3',
+      title: '这里是校友的标题3',
       time: '2018-01-22',
     },
     {
-      title: '这里是文章的标题4',
+      title: '这里是校友的标题4',
       time: '2018-02-02',
     },
     {
-      title: '这里是文章的标题5',
+      title: '这里是校友的标题5',
       time: '2018-01-22',
     },
     {
-      title: '这里是文章的标题6',
+      title: '这里是校友的标题6',
       time: '2018-02-02',
     },
   ],
@@ -75,7 +75,7 @@ export default class LatestNews extends Component {
           <Col xxs="24" s="12" l="12">
             <IceContainer style={styles.cardContainer}>
               <h3 style={styles.cardTitle}>
-                最新文章
+                最新校友
                 <a className="link" href="#" style={styles.more}>
                   更多
                 </a>
@@ -97,7 +97,7 @@ export default class LatestNews extends Component {
               </div>
             </IceContainer>
           </Col>
-          <Col xxs="24" s="12" l="12">
+          {/* <Col xxs="24" s="12" l="12">
             <IceContainer style={styles.cardContainer}>
               <h3 style={styles.cardTitle}>
                 最新评论
@@ -124,7 +124,7 @@ export default class LatestNews extends Component {
                 })}
               </div>
             </IceContainer>
-          </Col>
+          </Col> */}
         </Row>
       </div>
     );

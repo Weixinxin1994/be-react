@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Tab } from '@icedesign/base';
-import axios from 'axios';
 import CustomTable from './components/CustomTable';
 import EditDialog from './components/EditDialog';
 import DeleteBalloon from './components/DeleteBalloon';
+
+// import axios from 'axios';
+import { axios } from '../../../../configuration'
 
 const TabPane = Tab.TabPane;
 
 const tabs = [
   { tab: '全部', key: 'all' },
-  { tab: '已发布', key: 'released' },
-  { tab: '审核中', key: 'review' },
-  { tab: '已拒绝', key: 'rejected' },
+  // { tab: '已发布', key: 'released' },
+  // { tab: '审核中', key: 'review' },
+  // { tab: '已拒绝', key: 'rejected' },
 ];
 
 export default class TabTable extends Component {
@@ -30,28 +32,52 @@ export default class TabTable extends Component {
     };
     this.columns = [
       {
-        title: '标题',
-        dataIndex: 'title',
-        key: 'title',
-        width: 200,
+        title: '姓名',
+        dataIndex: 'name',
+        key: 'name',
+        width: 100,
       },
       {
-        title: '作者',
-        dataIndex: 'author',
-        key: 'author',
-        width: 150,
+        title: '手机',
+        dataIndex: 'phone',
+        key: 'phone',
+        width: 110,
       },
       {
-        title: '状态',
-        dataIndex: 'status',
-        key: 'status',
-        width: 150,
+        title: 'QQ',
+        dataIndex: 'qq',
+        key: 'qq',
+        width: 100,
       },
       {
-        title: '发布时间',
-        dataIndex: 'date',
-        key: 'date',
-        width: 150,
+        title: '微信',
+        dataIndex: 'wechat',
+        key: 'wechat',
+        width: 100,
+      },
+      {
+        title: '学院',
+        dataIndex: 'college',
+        key: 'college',
+        width: 100,
+      },
+      {
+        title: '班级',
+        dataIndex: 'theClass',
+        key: 'theClass',
+        width: 100,
+      },
+      {
+        title: '地址',
+        dataIndex: 'address',
+        key: 'address',
+        width: 120,
+      },
+      {
+        title: '毕业年份',
+        dataIndex: 'graduationYear',
+        key: 'graduationYear',
+        width: 100,
       },
       {
         title: '操作',
@@ -76,11 +102,12 @@ export default class TabTable extends Component {
   }
 
   componentDidMount() {
+    // 先不做分页
     axios
-      .get('/mock/tab-table.json')
+      .get('/api/schoolmate/list?size=1000')
       .then((response) => {
         this.setState({
-          dataSource: response.data.data,
+          dataSource: { all: response.data.list },
         });
       })
       .catch((error) => {
@@ -88,16 +115,29 @@ export default class TabTable extends Component {
       });
   }
 
-  getFormValues = (dataIndex, values) => {
+  getFormValues = async (dataIndex, values) => {
     const { dataSource, tabKey } = this.state;
     dataSource[tabKey][dataIndex] = values;
+    console.log('表单拿到的数据', values)
+    try {
+      await axios.post(`/api/schoolmate/update/${values.id}`, values)
+    } catch (error) {
+      console.log(error)
+    }
     this.setState({
       dataSource,
     });
   };
 
-  handleRemove = (value, index) => {
+  handleRemove = async (value, index) => {
     const { dataSource, tabKey } = this.state;
+    const id = dataSource[tabKey][index].id
+    // 删除数据
+    try {
+      await axios.post(`/api/schoolmate/delete/${id}`)
+    } catch (error) {
+      console.log(error)
+    }
     dataSource[tabKey].splice(index, 1);
     this.setState({
       dataSource,

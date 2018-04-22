@@ -93,7 +93,7 @@ export default class EditDialog extends Component {
               />
             </FormItem>
 
-            <FormItem label="文章数：" {...formItemLayout}>
+            <FormItem label="校友数：" {...formItemLayout}>
               <Input
                 disabled
                 {...init('articleNum', {

@@ -32,12 +32,12 @@ const customAsideNavs = [
     icon: 'home',
   },
   {
-    text: '文章管理',
+    text: '校友管理',
     to: '/post',
     icon: 'copy',
     children: [
-      { text: '文章列表', to: '/post/list' },
-      { text: '添加文章', to: '/post/create' },
+      { text: '校友列表', to: '/post/list' },
+      { text: '添加校友', to: '/post/create' },
     ],
   },
   // {
@@ -58,16 +58,16 @@ const customAsideNavs = [
   //     { text: '添加标签', to: '/tag/create' },
   //   ],
   // },
-  {
-    text: '用户管理',
-    to: '/user',
-    icon: 'yonghu',
-    children: [
-      { text: '用户列表', to: '/user/list' },
-      { text: '添加用户', to: '/user/create' },
-      { text: '修改密码', to: '/user/pwd' },
-    ],
-  },
+  // {
+  //   text: '用户管理',
+  //   to: '/user',
+  //   icon: 'yonghu',
+  //   children: [
+  //     { text: '用户列表', to: '/user/list' },
+  //     { text: '添加用户', to: '/user/create' },
+  //     { text: '修改密码', to: '/user/pwd' },
+  //   ],
+  // },
   // {
   //   text: '通用设置',
   //   to: '/setting',
