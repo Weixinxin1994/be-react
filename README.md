@@ -2,12 +2,13 @@
 
 ## Develop
 
-```
-$ npm start
+```sh
+npm install
+npm start
 ```
 
 ## Build
 
-```
-# npm run build
+```sh
+npm run build
 ```
