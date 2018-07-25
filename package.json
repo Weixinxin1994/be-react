@@ -27,9 +27,11 @@
     "webpack-serve": "latest"
   },
   "dependencies": {
+    "antd": "latest",
     "moment": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-router": "latest"
+    "react-router": "latest",
+    "react-router-dom": "latest"
   }
 }
