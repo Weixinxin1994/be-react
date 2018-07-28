@@ -21,9 +21,9 @@ export class App extends React.Component<{}, {}> {
 
                 <hr />
 
-                <Route exact path="/" render={() => <Page title="Home" />} />
-                <Route path="/page-a" render={() => <Page title="A" />} />
-                <Route path="/page-b" render={() => <Page title="B" />} />
+                <Route exact path="/" component={() => <Page title="Home" />} />
+                <Route path="/page-a" component={() => <Page title="A" />} />
+                <Route path="/page-b" component={() => <Page title="B" />} />
             </div>
         </Router>)
     }
