@@ -27,7 +27,7 @@
     "webpack-serve": "latest"
   },
   "dependencies": {
-    "antd": "latest",
+    "@material-ui/core": "latest",
     "axios": "latest",
     "moment": "latest",
     "react": "latest",

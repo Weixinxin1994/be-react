@@ -1,9 +1,6 @@
 import * as React from 'react'
 
-import * as DatePicker from 'antd/lib/date-picker'
-import 'antd/dist/antd.css'
-
-const DatePicker_ = DatePicker as any
+import Button from '@material-ui/core/Button';
 
 export class Page extends React.Component<{ title: string }, {}> {
 
@@ -11,7 +8,7 @@ export class Page extends React.Component<{ title: string }, {}> {
         return (
             <div>
                 <h1>{this.props.title}</h1>
-                <DatePicker_ />
+                <Button variant="raised" color="primary">Hello World</Button>
             </div>
         )
     }
