@@ -30,7 +30,9 @@
     "@material-ui/core": "latest",
     "axios": "latest",
     "moment": "latest",
+    "ra-data-simple-rest": "^2.1.4",
     "react": "latest",
+    "react-admin": "^2.1.4",
     "react-dom": "latest",
     "react-router": "latest",
     "react-router-dom": "latest"
