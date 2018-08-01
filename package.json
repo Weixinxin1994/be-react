@@ -24,15 +24,13 @@
     "typescript": "latest",
     "webpack": "latest",
     "webpack-cli": "latest",
-    "webpack-serve": "latest"
-  },
-  "dependencies": {
+    "webpack-serve": "latest",
     "@material-ui/core": "latest",
     "axios": "latest",
     "moment": "latest",
-    "ra-data-simple-rest": "^2.1.4",
+    "ra-data-simple-rest": "latest",
     "react": "latest",
-    "react-admin": "^2.1.4",
+    "react-admin": "latest",
     "react-dom": "latest",
     "react-router": "latest",
     "react-router-dom": "latest"
