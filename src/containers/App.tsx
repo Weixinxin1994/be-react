@@ -5,7 +5,7 @@ import authProvider from '../api/authProvider'
 import dataProvider from '../api/dataProvider'
 import i18nProvider from '../api/i18nProvider'
 
-import { PostList, PostEdit, PostCreate } from './posts'
+import { PostList } from './posts'
 
 export const App = () => (
     <Admin
@@ -15,6 +15,6 @@ export const App = () => (
         dataProvider={dataProvider}
         authProvider={authProvider}
     >
-        <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} />
+        <Resource name="posts" options={{ label: '帖子' }} list={PostList} />
     </Admin>
 )

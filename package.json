@@ -33,9 +33,7 @@
     "react-admin": "latest",
     "react-dom": "latest",
     "react-router": "latest",
-    "react-router-dom": "latest"
-  },
-  "dependencies": {
+    "react-router-dom": "latest",
     "ra-language-chinese": "^2.0.4"
   }
 }
