@@ -1,30 +1,20 @@
 import * as React from 'react'
+import { Admin, Resource } from 'react-admin'
 
-import { Page } from '../components/Page'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import authProvider from '../api/authProvider'
+import dataProvider from '../api/dataProvider'
+import i18nProvider from '../api/i18nProvider'
 
-export class App extends React.Component<{}, {}> {
-    public render() {
-        return (<Router>
-            <div>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/page-a">Page A</Link>
-                    </li>
-                    <li>
-                        <Link to="/page-b">Page B</Link>
-                    </li>
-                </ul>
+import { PostList, PostEdit, PostCreate } from './posts'
 
-                <hr />
-
-                <Route exact path="/" component={() => <Page title="Home" />} />
-                <Route path="/page-a" component={() => <Page title="A" />} />
-                <Route path="/page-b" component={() => <Page title="B" />} />
-            </div>
-        </Router>)
-    }
-}
+export const App = () => (
+    <Admin
+        title='XX管理系统'
+        locale='cn'
+        i18nProvider={i18nProvider}
+        dataProvider={dataProvider}
+        authProvider={authProvider}
+    >
+        <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} />
+    </Admin>
+)
