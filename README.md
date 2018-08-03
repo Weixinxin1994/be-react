@@ -17,4 +17,5 @@ npm run build
 
 - TypeScript
 - React
-- React Admin
+- [React Admin](https://github.com/marmelab/react-admin)
+
