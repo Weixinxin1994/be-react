@@ -11,29 +11,29 @@
   "bugs": {
     "url": "https://github.com/cbdyzj/be-react/issues"
   },
+  "types": "index.d.ts",
   "devDependencies": {
+    "@material-ui/core": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/react-router": "latest",
+    "axios": "latest",
     "css-loader": "latest",
     "file-loader": "latest",
     "html-webpack-plugin": "latest",
-    "style-loader": "latest",
-    "ts-loader": "latest",
-    "typescript": "latest",
-    "webpack": "latest",
-    "webpack-cli": "latest",
-    "webpack-serve": "latest",
-    "@material-ui/core": "latest",
-    "axios": "latest",
     "moment": "latest",
-    "ra-data-simple-rest": "latest",
+    "ra-language-chinese": "^2.0.4",
     "react": "latest",
     "react-admin": "latest",
     "react-dom": "latest",
     "react-router": "latest",
     "react-router-dom": "latest",
-    "ra-language-chinese": "^2.0.4"
+    "style-loader": "latest",
+    "ts-loader": "latest",
+    "typescript": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-serve": "latest"
   }
 }

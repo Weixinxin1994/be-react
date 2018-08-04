@@ -8,6 +8,9 @@
         "lib": [
             "es2017",
             "dom"
+        ],
+        "types": [
+            
         ]
     },
     "exclude": [
@@ -16,4 +19,5 @@
     "include": [
         "src"
     ]
+
 }
