@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Admin, Resource } from 'react-admin'
 
-import authProvider from '../api/authProvider'
-import dataProvider from '../api/dataProvider'
-import i18nProvider from '../api/i18nProvider'
+import authProvider from '../auth/auth-provider'
+import dataProvider from '../api/data-provider'
+import i18nProvider from '../i18n/i18n-provider'
 
 import { PostList } from './posts'
 

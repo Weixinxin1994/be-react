@@ -1,7 +1,3 @@
-import * as restProvider from 'ra-data-simple-rest'
-
-export default restProvider('http://localhost:3000')
-
 import {
     GET_LIST,
     GET_ONE,
@@ -12,4 +8,4 @@ import {
     DELETE
 } from 'react-admin'
 
-const API_URL = ''
+export default apiUrl => ({})
