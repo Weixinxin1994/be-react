@@ -8,13 +8,7 @@ import { i18nProvider } from '../i18n'
 import { PostList } from './posts'
 
 export const App = () => (
-    <Admin
-        title='XX管理系统'
-        locale='cn'
-        i18nProvider={i18nProvider}
-        dataProvider={dataProvider}
-        authProvider={authProvider}
-    >
+    <Admin title='XX管理系统' locale='cn' i18nProvider={i18nProvider} dataProvider={dataProvider} authProvider={authProvider}>
         <Resource name="posts" options={{ label: '帖子' }} list={PostList} />
     </Admin>
 )
