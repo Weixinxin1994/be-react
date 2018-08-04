@@ -3,7 +3,7 @@ import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditBut
 import * as BookIcon from '@material-ui/core/SvgIcon';
 export const PostIcon = BookIcon;
 
-export const PostList = (props) => (
+export const PostList = props => (
     <List {...props} title="帖子列表">
         <Datagrid>
             <TextField label="ID" source="id" />

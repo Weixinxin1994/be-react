@@ -6,4 +6,4 @@ const messages = {
     'en': englishMessages,
 };
 
-export default (locale) => messages[locale]
+export default locale => messages[locale]
