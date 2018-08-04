@@ -1,5 +1,5 @@
-import * as chineseMessages from 'ra-language-chinese';
-import * as englishMessages from 'ra-language-english';
+import chineseMessages from 'ra-language-chinese';
+import englishMessages from 'ra-language-english';
 
 const messages = {
     'cn': chineseMessages,

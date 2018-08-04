@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
     List, Datagrid, Edit, Create, SimpleForm, DateField, DateInput,
     TextField, EditButton, DisabledInput, TextInput, LongTextInput,
