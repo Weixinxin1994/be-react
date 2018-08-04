@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, DateInput } from 'react-admin';
-import * as BookIcon from '@material-ui/core/SvgIcon';
-export const PostIcon = BookIcon;
+import {
+    List, Datagrid, Edit, Create, SimpleForm, DateField, DateInput,
+    TextField, EditButton, DisabledInput, TextInput, LongTextInput,
+} from 'react-admin';
 
 export const PostList = props => (
     <List {...props} title="帖子列表">
