@@ -1,6 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { Configuration } from 'webpack';
 
-module.exports = {
+const config: Configuration = {
     module: {
         rules: [
             {
@@ -25,3 +26,5 @@ module.exports = {
     ],
     mode: 'development',
 }
+
+export default config

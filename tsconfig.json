@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "module": "commonjs",
+        "esModuleInterop": true,
         "target": "es2017",
         "outDir": "dist",
         "jsx": "react",
@@ -19,5 +20,4 @@
     "include": [
         "src"
     ]
-
 }

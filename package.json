@@ -4,36 +4,41 @@
   "version": "0.0.1",
   "description": "Be React",
   "scripts": {
-    "start": "webpack-serve",
-    "build": "webpack --mode production"
+    "start": "ts-node ./node_modules/.bin/webpack-serve",
+    "build": "export TS_NODE_PROJECT=\"tsconfig.json\" && webpack --mode production",
+    "clean": "rm -rf dist"
   },
   "homepage": "https://github.com/cbdyzj/be-react#readme",
   "bugs": {
     "url": "https://github.com/cbdyzj/be-react/issues"
   },
-  "types": "index.d.ts",
   "devDependencies": {
     "@material-ui/core": "latest",
+    "@types/html-webpack-plugin": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/react-router": "latest",
-    "axios": "latest",
+    "@types/webpack": "latest",
     "css-loader": "latest",
     "file-loader": "latest",
     "html-webpack-plugin": "latest",
-    "moment": "latest",
-    "ra-language-chinese": "^2.0.4",
-    "react": "latest",
-    "react-admin": "latest",
-    "react-dom": "latest",
-    "react-router": "latest",
-    "react-router-dom": "latest",
     "style-loader": "latest",
     "ts-loader": "latest",
+    "ts-node": "latest",
     "typescript": "latest",
     "webpack": "latest",
     "webpack-cli": "latest",
     "webpack-serve": "latest"
+  },
+  "dependencies": {
+    "moment": "latest",
+    "axios": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router": "latest",
+    "react-router-dom": "latest",
+    "react-admin": "latest",
+    "ra-language-chinese": "latest"
   }
 }
