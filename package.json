@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "description": "Be React",
   "scripts": {
-    "start": "ts-node ./node_modules/.bin/webpack-serve",
-    "build": "export TS_NODE_PROJECT=\"tsconfig.json\" && webpack --mode production",
+    "start": "webpack-serve",
+    "build": "webpack --mode production",
     "clean": "rm -rf dist"
   },
   "homepage": "https://github.com/cbdyzj/be-react#readme",
