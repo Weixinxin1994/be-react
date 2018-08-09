@@ -1,5 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { Configuration } from 'webpack';
+import { Configuration } from 'webpack'
 
 const config: Configuration = {
     module: {
