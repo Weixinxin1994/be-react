@@ -1,6 +1,10 @@
-import createDataProviderMock from './data-provider-mock'
+import BookDataProvider from './book-api'
 
-const API_URL = 'http://localhost:3000'
-
-// Mock接口
-export const dataProvider = createDataProviderMock(API_URL)
+export function dataProvider(type, resource, params) {
+    switch (resource) {
+        case 'book':
+            return new BookDataProvider(type, params).provide()
+        default:
+            throw new Error('异常资源请求！')
+    }
+}

@@ -7,6 +7,12 @@ npm install
 npm start
 ```
 
+## Reverse Proxy
+
+```
+npm run proxy
+```
+
 ## Build
 
 ```sh
@@ -18,4 +24,3 @@ npm run build
 - TypeScript
 - React
 - [React Admin](https://github.com/marmelab/react-admin)
-
