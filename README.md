@@ -4,13 +4,9 @@
 
 ```sh
 npm install
-npm start
-```
-
-## Reverse Proxy
-
-```
-npm run proxy
+npm run server  # Back end
+npm run proxy   # Reverse proxy
+npm start       # Front end
 ```
 
 ## Build
