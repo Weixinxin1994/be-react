@@ -5,6 +5,7 @@ import {
 } from 'react-admin'
 
 import { client } from '../config'
+import { Book } from '../model'
 
 export default class BookDataProvider {
 
@@ -21,9 +22,17 @@ export default class BookDataProvider {
         return res.data
     }
 
+    async deleteById() {
+        const { id } = this.params
+        const res = await client.post(`/api/book/remove/${id}`)
+        return res.data
+    }
+
     async provide() {
+        console.log(this.type)
         switch (this.type) {
             case GET_LIST: return this.list()
+            case DELETE: return this.deleteById()
         }
     }
 }

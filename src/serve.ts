@@ -3,7 +3,7 @@ import http from 'http'
 import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
 
-import router from './router'
+import router from './server'
 
 const app = new Koa
 app.keys = ['koa']

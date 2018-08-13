@@ -1,12 +1,4 @@
-import Router from 'koa-router'
-
-export interface Book {
-    id: number,
-    name: string
-    isbn: string
-    author?: string
-    introduction?: string
-}
+import { Book } from '../model'
 
 const books: Book[] = [
     {
@@ -32,13 +24,6 @@ const books: Book[] = [
     },
 ]
 
-const router = new Router
-
-router.get('/api/book/list', ctx => {
-    ctx.body = {
-        data: books,
-        total: books.length
-    }
-})
-
-export default router
+export default {
+    books,
+}
