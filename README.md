@@ -4,7 +4,7 @@
 
 ```sh
 npm install
-npm run server  # Back end
+npm run serve   # Back end
 npm run proxy   # Reverse proxy
 npm start       # Front end
 ```
