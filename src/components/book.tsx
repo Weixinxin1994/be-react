@@ -1,8 +1,10 @@
-import React from 'react';
-import {
+import React from 'react'
+import * as ra from 'react-admin'
+
+const {
     List, Datagrid, Edit, Create, SimpleForm, DateField, DateInput, DeleteButton,
     TextField, EditButton, DisabledInput, TextInput, LongTextInput,
-} from 'react-admin';
+} = ra as any
 
 export const BookList = props => (
     <List {...props} title="书架" >

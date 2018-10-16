@@ -1,4 +1,6 @@
-import { AUTH_LOGIN, AUTH_LOGOUT, AUTH_ERROR, AUTH_CHECK } from 'react-admin';
+import * as ra from 'react-admin';
+
+const { AUTH_LOGIN, AUTH_LOGOUT, AUTH_ERROR, AUTH_CHECK } = ra as any
 
 class AuthAction {
 

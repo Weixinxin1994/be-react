@@ -1,11 +1,13 @@
-import {
+import { client } from '../config'
+import { Book } from '../model'
+
+import * as ra from 'react-admin'
+
+const {
     GET_LIST, GET_ONE, GET_MANY,
     GET_MANY_REFERENCE,
     CREATE, UPDATE, DELETE
-} from 'react-admin'
-
-import { client } from '../config'
-import { Book } from '../model'
+} = ra as any
 
 export default class BookDataProvider {
 
