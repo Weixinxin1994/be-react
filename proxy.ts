@@ -1,8 +1,8 @@
-import httpProxy from 'http-proxy'
+import HttpProxy from 'http-proxy'
 import http from 'http'
 import { IncomingMessage, ServerResponse } from 'http'
 
-const proxy = httpProxy.createProxyServer({ changeOrigin: true })
+const proxy = HttpProxy.createProxyServer({ changeOrigin: true })
 
 const STATIC = 'http://localhost:8080'
 const API_URL = 'http://localhost:3000'
