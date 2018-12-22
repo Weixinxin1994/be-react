@@ -11,6 +11,7 @@
     "clean": "rm -rf dist"
   },
   "homepage": "https://github.com/cbdyzj/be-react#readme",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/cbdyzj/be-react/issues"
   },
